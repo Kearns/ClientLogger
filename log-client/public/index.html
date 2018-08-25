@@ -29,25 +29,6 @@
     You need to enable JavaScript to run this app.
   </noscript>
   <div id="root"></div>
-  <script>
-
-    const __OG_CONSOLE__ = window.console;
-    const remoteLogger = (args, type) => { __OG_CONSOLE__.info(args, type) };
-
-    window.console = {
-      warn: function () {
-        remoteLogger(arguments, 'warn');
-        __OG_CONSOLE__.warn.call(this, 'My Console!!!', ...arguments)
-      },
-      log: function () {
-        __OG_CONSOLE__.log.call(this, 'My Console!!!', ...arguments)
-      },
-      error: function () {
-        __OG_CONSOLE__.error.call(this, 'My Console!!!', ...arguments)
-      },
-      eject: () => window.console = __OG_CONSOLE__
-    }
-  </script>
   <!--
       This HTML file is a template.
       If you open it directly in the browser, you will see an empty page.

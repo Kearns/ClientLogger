@@ -5,7 +5,7 @@ db.run("CREATE TABLE logging (type TEXT, message TEXT, date DATETIME)");
 
 const dataDriver = {};
 
-dataDriver.pushLog = (type, message, date) =>
+dataDriver.pushLog = ({ type, message, date }) =>
   db.serialize(() => {
     const stmt = db.prepare("INSERT INTO logging VALUES (?, ?, ?)");
     stmt.run(type, message, date);
