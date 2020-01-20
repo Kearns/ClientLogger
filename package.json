@@ -1,7 +1,15 @@
 {
   "name": "nstream",
   "private": true,
-  "workspaces": ["workspace-a", "workspace-b"],
+  "workspaces": [
+    "packages/*"
+  ],
+  "scripts": {
+    "start": "lerna run start"
+  },
   "author": "Kearns <patk4000@gmail.com>",
-  "license": "MIT"
+  "license": "MIT",
+  "devDependencies": {
+    "lerna": "^2.5.1"
+  }
 }

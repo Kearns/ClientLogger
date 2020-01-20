@@ -63,7 +63,7 @@ class App extends Component {
         <h2>Demo</h2>
         <button
           onClick={() => {
-            console.warn({ message: "ERROR!" }, { code: 111 });
+            console.warn({ message: "WARNING!" }, { code: 111 });
           }}
         >
           Click
