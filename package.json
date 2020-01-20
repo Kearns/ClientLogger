@@ -1,0 +1,7 @@
+{
+  "name": "nstream",
+  "private": true,
+  "workspaces": ["workspace-a", "workspace-b"],
+  "author": "Kearns <patk4000@gmail.com>",
+  "license": "MIT"
+}

@@ -30,7 +30,7 @@ class App extends Component {
                   : JSON.stringify(messages[key])
             );
             return (
-              <div className="log" key={`${log.type}__${log.date}`}>
+              <div className="log" key={`${log.type}__${log.date}__${log.id}`}>
                 <div className={`log__head--${log.type}`}>
                   {log.type}{" "}
                   <span style={{ float: "right" }}>
