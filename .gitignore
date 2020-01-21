@@ -1,3 +1,6 @@
 node_modules
 *.db
 *.config.js
+yarn-error.log
+lerna-debug.log
+dist/

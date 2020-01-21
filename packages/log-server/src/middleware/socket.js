@@ -1,6 +1,6 @@
-const ioClient = require("socket.io");
-const LogStream = require("../LogStream");
-const db = require("./data");
+import ioClient from "socket.io";
+import LogStream from "../LogStream";
+import db from "./data";
 
 const socket = server => ioClient(server).on("connection", onConnection);
 
@@ -16,4 +16,4 @@ const onConnection = socket => {
   });
 };
 
-module.exports = socket;
+export default socket;

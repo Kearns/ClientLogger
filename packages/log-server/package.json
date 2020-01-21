@@ -2,8 +2,14 @@
   "name": "log-server",
   "version": "0.0.0",
   "private": true,
+  "source": "src/app.js",
+  "main": "dist/app.js",
   "scripts": {
-    "start": "node ./bin/www"
+    "start": "concurrently \"yarn build:watch\" \"yarn server\"",
+    "server": "node ./bin/www",
+    "lint": "eslint routes/** extensions/** bin/** middleware/** routes/** app.js LogStream.js",
+    "build": "microbundle --target node",
+    "build:watch": "microbundle watch --target node"
   },
   "dependencies": {
     "debug": "~2.6.9",
@@ -13,5 +19,10 @@
     "socket.io": "^2.1.1",
     "sqlite3": "^4.0.2",
     "uuid": "^3.3.2"
+  },
+  "devDependencies": {
+    "eslint": "^6.8.0",
+    "microbundle": "^0.11.0",
+    "concurrently": "^5.0.2"
   }
 }

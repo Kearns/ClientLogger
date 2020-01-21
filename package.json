@@ -5,11 +5,16 @@
     "packages/*"
   ],
   "scripts": {
-    "start": "lerna run start"
+    "start": "lerna run start",
+    "lint": "lerna run lint"
   },
   "author": "Kearns <patk4000@gmail.com>",
   "license": "MIT",
   "devDependencies": {
-    "lerna": "^2.5.1"
+    "eslint": "^6.8.0",
+    "eslint-plugin-import": "^2.20.0",
+    "eslint-plugin-jsx-a11y": "^6.2.3",
+    "lerna": "^2.5.1",
+    "microbundle": "^0.11.0"
   }
 }

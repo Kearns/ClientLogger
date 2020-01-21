@@ -13,4 +13,4 @@ class LogStream extends Transform {
   }
 }
 
-module.exports = LogStream;
+export default LogStream;

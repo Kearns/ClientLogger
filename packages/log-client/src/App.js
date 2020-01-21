@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import "./App.css";
 import io from "socket.io-client";
+import push from "push-client";
 
 const socket = io("http://localhost:80");
 
@@ -23,11 +24,10 @@ class App extends Component {
           {this.state.logs.map(log => {
             const messages = JSON.parse(log.message);
             const messageKeys = Object.keys(messages);
-            const mappedMessages = messageKeys.map(
-              key =>
-                typeof messages[key] === "string"
-                  ? messages[key]
-                  : JSON.stringify(messages[key])
+            const mappedMessages = messageKeys.map(key =>
+              typeof messages[key] === "string"
+                ? messages[key]
+                : JSON.stringify(messages[key])
             );
             return (
               <div className="log" key={`${log.type}__${log.date}__${log.id}`}>
@@ -63,10 +63,24 @@ class App extends Component {
         <h2>Demo</h2>
         <button
           onClick={() => {
-            console.warn({ message: "WARNING!" }, { code: 111 });
+            console.warn(
+              { message: "Console.warn intercepted!" },
+              { code: 111 }
+            );
           }}
         >
-          Click
+          Console Interceptor
+        </button>
+        <button
+          onClick={() => {
+            console.log("PUSH", push)
+            push({
+              type: "TEST", 
+              payload: { message: "client push library used!" }
+            });
+          }}
+        >
+          Client Push Library
         </button>
       </div>
     );
